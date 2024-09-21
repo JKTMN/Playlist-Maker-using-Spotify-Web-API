@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Playlist</title>
+</head>
+<body>
+    <h1>Add songs to playlist</h1>
+    <button id="createPlaylistBtn">Create Playlist</button>
+    <p id="result"></p>
+
+    <script>
+      fetch('/add-songs-to-playlist', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({})
+})
+.then(response => response.json())
+.then(data => {
+    console.log('Success:', data);
+})
+.catch((error) => {
+    console.error('Error:', error);
+});
+  
+    </script>
+</body>
+</html>

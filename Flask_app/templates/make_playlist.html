@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <form id="artist-form" method="POST" action="/submit">
+        <label for="search-artist">Search for an artist</label>
+        <input id="artist-name" name="artist-name" type="text" required>
+        <button type="submit">Submit</button>
+    </form>
+
+    <script src="{{ url_for('static', filename='scripts.js') }}" defer></script>
+
+</body>
+</html>

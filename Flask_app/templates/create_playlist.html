@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Playlist</title>
+</head>
+<body>
+    <h1>Create a New Playlist</h1>
+    <button id="createPlaylistBtn">Create Playlist</button>
+    <p id="result"></p>
+
+    <script>
+    document.getElementById('createPlaylistBtn').addEventListener('click', function() {
+        fetch('/create-playlist', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({}),
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (data.error) {
+                document.getElementById('result').textContent = 'Error: ' + data.error;
+            } else if (data.redirect) {
+                window.location.href = data.redirect;
+            } else {
+                document.getElementById('result').textContent = 'Playlist created successfully! ID: ' + data.playlist_id;
+            }
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+            document.getElementById('result').textContent = 'An error occurred: ' + error.message;
+        });
+    });
+    </script>
+</body>
+</html>
