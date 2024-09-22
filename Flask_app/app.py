@@ -22,7 +22,7 @@ API_BASE_URL = "https://api.spotify.com/v1/"
 
 @app.route('/')
 def home():
-    return "Welcome to my Spotify App <a href='/login'>Login with Spotify</a>"
+    return render_template('homepage.html')
 
 @app.route('/login')
 def login():
