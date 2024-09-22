@@ -73,12 +73,13 @@ body {
 }
 
 .second-section .large-text {
-    left: -4rem;
+    left: -25rem;
 
 }
 
 .second-section .small-text {
-    margin-left: -50px;
+    left: -22rem;
+    margin-left: -10px;
 }
 
 .image-container {
@@ -167,4 +168,36 @@ body {
     position: absolute;
     pointer-events: none;
     opacity: 0.5;
+}
+
+.section-four {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0;
+    background-color: transparent;
+    margin-bottom: 6rem;
+}
+
+.text1 {
+    color: #d1d5db;
+    font-size: 4rem;
+    font-weight: bold;
+    text-shadow: 4px 4px 15px rgba(0, 0, 0, 0.7);
+    position: relative;
+    margin-bottom: 1rem;
+    text-align: left;
+    flex-basis: 50%;
+}
+
+.text2 {
+    color: #9ca3af;
+    font-size: 2rem;
+    margin-top: -1vh;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.6);
+    position: relative;
+    margin-bottom: 2rem;
+    text-align: left;
 }
